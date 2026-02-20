@@ -1,0 +1,269 @@
+baseURL = "https://www.bilup.org/"
+title = "Bilup"
+defaultContentLanguage = "en"
+
+# Theme Config
+theme = "hugo-saasify"
+
+# Enable emoji support
+enableEmoji = true
+
+# Enable Git info for lastmod
+enableGitInfo = false
+
+# Enable taxonomies
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+
+# Pagination
+[pagination]
+  pagerSize = 6
+  path = "page"
+
+[params]
+  description = ""
+  author = "Bilup Foundation"
+  logo = "/images/logo.svg"
+  # Google Analytics ID (e.g., "G-XXXXXXXXXX")
+  # googleAnalytics = "G-XXXXXXXXXX"
+  
+  # Global CTA Configurations
+  [params.cta]
+    enable = true
+    title = "Ready to Refactor Freedom?"
+    description = "Join studios and developers already using Bilup to have a better experience on creating Scratch projects."
+    gradient_from = "#75C1C4"  # Indigo-600
+    gradient_to = "#5da8cc"    # Purple-600
+    gradient_angle = 30
+    [params.cta.primary_button]
+      text = "Get Started"
+      url = "https://editor.bilup.org/"
+  
+  # Social Media Links
+  [params.social]
+    github = "https://github.com/Bilup"
+  
+  # Footer Configuration
+  [params.footer]
+    column_1_title = "FEATURES"
+    column_2_title = "ORGANIZATION"
+    column_3_title = "LEGAL"
+  
+  [params.header]
+    # Header background and border styles (optional)
+    background = "bg-white/80 backdrop-blur-sm"
+    border = "border-b border-gray-100"
+    
+    # Logo configuration
+    [params.header.logo]
+      src = "/images/logo.svg"
+    
+    # Menu configuration
+    [params.header.menu]
+      spacing = "space-x-8"
+      
+      # Dropdown menu configuration
+      [params.header.menu.dropdown]
+        width = "w-72"
+        container_padding = "py-6"
+        item_padding = "px-8 py-3"
+        background = "bg-white"
+        border = "border border-gray-100"
+        shadow = "shadow-xl"
+        radius = "rounded-lg"
+        text_color = "text-gray-700"
+        hover_background = "hover:bg-gray-50"
+        text_size = "text-sm"
+    
+    # Button configuration
+      # Get Started button
+      [params.header.buttons.getStarted]
+        text = "Get Started"
+        url = "https://editor.bilup.org/"
+
+  # Blog configuration
+  [params.blog]
+    enable = true
+    title = "Latest Articles"
+    subtitle = "Learn more about our progress and new updates."
+    
+    # Blog CTA configuration
+    [params.blog.cta]
+      enable = true  # Enable/disable CTA in blog posts
+    
+    # Sidebar configuration
+    [params.blog.sidebar]
+      # Recent articles section
+      [params.blog.sidebar.recent]
+        enable = true
+        title = "Recent Articles"
+        count = 5
+      
+      # Categories section
+      [params.blog.sidebar.categories]
+        enable = true
+        title = "Categories"
+      
+      # Tags section
+      [params.blog.sidebar.tags]
+        enable = true
+        title = "Popular Tags"
+        count = 20
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.80.0"
+
+[build]
+  writeStats = true
+
+[build.buildStats]
+  enable = true
+
+[security.funcs]
+  getenv = ['^HUGO_', '^CI$']
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    lineNos = true
+    codeFences = true
+    guessSyntax = true
+    lineNumbersInTable = true
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+
+# Multilingual Configuration
+# Uncomment the sections below to enable multilingual support
+# See docs/CONFIGURATION.md for detailed instructions
+
+ [languages]
+   [languages.en]
+     languageCode = "en-us"
+     languageName = "English"
+     weight = 1
+     contentDir = "content"
+
+   [languages.zh-cn]
+     languageCode = "zh-cn"
+     languageName = "简体中文"
+     weight = 2
+     contentDir = "content/zh-cn"
+     [languages.zh-cn.params.cta]
+       enable = true
+       title = "准备好重构自由了么？"
+       description = "加入已经使用Bilup的工作室和开发者，在创建 Scratch 项目方面获得更好的体验。"
+       gradient_from = "#75C1C4"  # Indigo-600
+       gradient_to = "#5da8cc"    # Purple-600
+       gradient_angle = 30
+       [languages.zh-cn.params.cta.primary_button]
+         text = "开始使用"
+         url = "https://editor.bilup.org/"
+      [languages.zh-cn.params.footer]
+        column_1_title = "功能"
+        column_2_title = "组织"
+        column_3_title = "法律条例"
+      [languages.zh-cn.menu]
+      [languages.zh-cn.params.header.buttons.getStarted]
+        text = "开始使用"
+        url = "https://editor.bilup.org/"
+  [[languages.zh-cn.menu.main]]
+    name = "功能"
+    weight = 1
+    [languages.zh-cn.menu.main.params]
+      has_submenu = true
+      submenu = [
+        { name = "实时协作", url = "/features/live-collab/" },
+        { name = "自定义主题", url = "/features/custom-theme/" }
+      ]
+  [[languages.zh-cn.menu.main]]
+    name = "博客"
+    url = "/blog"
+    weight = 2
+  [[languages.zh-cn.menu.main]]
+    name = "未来计划"
+    url = "/todo-list"
+    weight = 3
+      # Footer Column 1 Menu
+  [[languages.zh-cn.menu.footer_column_1]]
+    name = "实时协作"
+    url = "/features/live-collab/"
+    weight = 1
+
+  [[languages.zh-cn.menu.footer_column_1]]
+    name = "自定义主题"
+    url = "/features/custom-theme/"
+    weight = 2
+
+  # Footer Column 2 Menu
+  [[languages.zh-cn.menu.footer_column_2]]
+    name = "博客"
+    url = "/blog"
+    weight = 1
+
+  # Footer Column 3 Menu
+  [[languages.zh-cn.menu.footer_column_3]]
+    name = "版权"
+    url = "/license"
+    weight = 1
+  [[languages.zh-cn.menu.footer_column_3]]
+    name = "隐私政策"
+    url = "https://editor.bilup.org/privacy"
+    weight = 2
+  [languages.zh-cn.params.blog]
+    enable = true
+    title = "最新文章"
+    subtitle = "了解更多关于我们的进度与更新。"
+
+# Navigation Menu
+[menu]
+  [[menu.main]]
+    name = "Features"
+    weight = 1
+    [menu.main.params]
+      has_submenu = true
+      submenu = [
+        { name = "Live Collaboration", url = "/features/live-collab/" },
+        { name = "Custom Theme", url = "/features/custom-theme/" }
+      ]
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog"
+    weight = 2
+  [[menu.main]]
+    name = "Todo List"
+    url = "/todo-list"
+    weight = 3
+
+  # Footer Column 1 Menu
+  [[menu.footer_column_1]]
+    name = "Live Collaboration"
+    url = "/features/live-collab/"
+    weight = 1
+
+  [[menu.footer_column_1]]
+    name = "Custom Theme"
+    url = "/features/custom-theme/"
+    weight = 2
+
+  # Footer Column 2 Menu
+  [[menu.footer_column_2]]
+    name = "Blog"
+    url = "/blog"
+    weight = 1
+
+  # Footer Column 3 Menu
+  [[menu.footer_column_3]]
+    name = "License"
+    url = "/license"
+    weight = 1
+  [[menu.footer_column_3]]
+    name = "Privacy Policy"
+    url = "https://editor.bilup.org/privacy"
+    weight = 2
