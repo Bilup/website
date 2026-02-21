@@ -157,7 +157,7 @@ enableGitInfo = false
      contentDir = "content/zh-cn"
      [languages.zh-cn.params.cta]
        enable = true
-       title = "准备好重构自由了么？"
+       title = "准备好重构自由度了么？"
        description = "加入已经使用Bilup的工作室和开发者，在创建 Scratch 项目方面获得更好的体验。"
        gradient_from = "#75C1C4"  # Indigo-600
        gradient_to = "#5da8cc"    # Purple-600

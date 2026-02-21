@@ -3,7 +3,7 @@ title: 首页
 ---
 
 {{< hero 
-    headline="重构自由"
+    headline="重构自由度"
     sub_headline="凭借实用的功能和惊艳的体验创建 Scratch 项目。"
     primary_button_text="开始使用"
     primary_button_url="https://editor.bilup.org/"
