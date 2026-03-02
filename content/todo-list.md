@@ -16,5 +16,5 @@ layout: "simple"
   - [ ] ...
 - [ ] Total `lucide-react` icon replace
 - [ ] Unlimited paint board
-- [ ] Desktop version
+- [x] Desktop version
 - [ ] CLI package

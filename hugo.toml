@@ -190,6 +190,10 @@ enableGitInfo = false
     name = "未来计划"
     url = "/todo-list"
     weight = 3
+  [[languages.zh-cn.menu.main]]
+    name = "桌面端"
+    url = "https://desktop.bilup.org/"
+    weight = 4
       # Footer Column 1 Menu
   [[languages.zh-cn.menu.footer_column_1]]
     name = "实时协作"
@@ -206,6 +210,11 @@ enableGitInfo = false
     name = "博客"
     url = "/blog"
     weight = 1
+
+  [[languages.zh-cn.menu.footer_column_2]]
+    name = "桌面端"
+    url = "https://desktop.bilup.org/"
+    weight = 2
 
   # Footer Column 3 Menu
   [[languages.zh-cn.menu.footer_column_3]]
@@ -240,6 +249,10 @@ enableGitInfo = false
     name = "Todo List"
     url = "/todo-list"
     weight = 3
+  [[menu.main]]
+    name = "Desktop"
+    url = "https://desktop.bilup.org/"
+    weight = 4
 
   # Footer Column 1 Menu
   [[menu.footer_column_1]]
@@ -257,6 +270,11 @@ enableGitInfo = false
     name = "Blog"
     url = "/blog"
     weight = 1
+
+  [[menu.footer_column_2]]
+    name = "Desktop"
+    url = "https://desktop.bilup.org/"
+    weight = 2
 
   # Footer Column 3 Menu
   [[menu.footer_column_3]]
