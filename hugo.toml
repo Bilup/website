@@ -43,6 +43,7 @@ enableGitInfo = false
   # Social Media Links
   [params.social]
     github = "https://github.com/Bilup"
+    qq = "https://qm.qq.com/q/RwVZVMkr0c"
   
   # Footer Configuration
   [params.footer]
@@ -187,13 +188,9 @@ enableGitInfo = false
     url = "/blog"
     weight = 2
   [[languages.zh-cn.menu.main]]
-    name = "未来计划"
-    url = "/todo-list"
-    weight = 3
-  [[languages.zh-cn.menu.main]]
     name = "桌面端"
     url = "https://desktop.bilup.org/"
-    weight = 4
+    weight = 3
       # Footer Column 1 Menu
   [[languages.zh-cn.menu.footer_column_1]]
     name = "实时协作"
@@ -246,13 +243,9 @@ enableGitInfo = false
     url = "/blog"
     weight = 2
   [[menu.main]]
-    name = "Todo List"
-    url = "/todo-list"
-    weight = 3
-  [[menu.main]]
     name = "Desktop"
     url = "https://desktop.bilup.org/"
-    weight = 4
+    weight = 3
 
   # Footer Column 1 Menu
   [[menu.footer_column_1]]
