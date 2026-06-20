@@ -1,2 +1,23 @@
+# Hugo generated files
 public/
-node_modules
+resources/
+.hugo_build.lock
+hugo_stats.json
+
+# Tailwind generated files
+static/css/style.css
+
+# Node.js dependencies
+node_modules/
+bun.lock
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db

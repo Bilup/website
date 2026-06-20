@@ -3,7 +3,7 @@ title: "实时协作"
 description: "在 Scratch 项目中实时与团队合作。分享您的想法、反馈和工作，创建出令人惊叹的项目。"
 layout: "feature"
 badge: "新功能"
-badgeColor: "#16a34a"
+badgeColor: "#4ade80"
 features:
   - title: "实时协作"
     description: "在 Scratch 项目中实时与团队合作。分享您的想法、反馈和工作，创建出令人惊叹的项目。"

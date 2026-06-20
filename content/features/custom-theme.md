@@ -3,7 +3,7 @@ title: "Custom Theme"
 description: "Create a custom theme for your Scratch project with our theme editor. Customize the look and feel of your project to match your brand."
 layout: "feature"
 badge: "Customize"
-badgeColor: "#eb4a25"
+badgeColor: "#fb923c"
 features:
   - title: "Gradient Themes"
     description: "Design beautiful gradient-based themes to give your Scratch editor a modern and dynamic appearance."

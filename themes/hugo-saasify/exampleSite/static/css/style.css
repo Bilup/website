@@ -124,7 +124,7 @@
   /* 2 */
   border-style: solid;
   /* 2 */
-  border-color: #e5e7eb;
+  border-color: #404040;
   /* 2 */
 }
 
@@ -1162,19 +1162,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .prose {
   --tw-prose-body: #374151;
-  --tw-prose-headings: #111827;
+  --tw-prose-headings: #75C1C4;
   --tw-prose-lead: #4b5563;
-  --tw-prose-links: #111827;
-  --tw-prose-bold: #111827;
+  --tw-prose-links: #75C1C4;
+  --tw-prose-bold: #75C1C4;
   --tw-prose-counters: #6b7280;
   --tw-prose-bullets: #d1d5db;
   --tw-prose-hr: #e5e7eb;
-  --tw-prose-quotes: #111827;
+  --tw-prose-quotes: #75C1C4;
   --tw-prose-quote-borders: #e5e7eb;
   --tw-prose-captions: #6b7280;
-  --tw-prose-kbd: #111827;
+  --tw-prose-kbd: #75C1C4;
   --tw-prose-kbd-shadows: rgb(17 24 39 / 10%);
-  --tw-prose-code: #111827;
+  --tw-prose-code: #75C1C4;
   --tw-prose-pre-code: #e5e7eb;
   --tw-prose-pre-bg: #1f2937;
   --tw-prose-th-borders: #d1d5db;
@@ -3051,9 +3051,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 0.5rem;
 }
 
-.pt-20 {
-  padding-top: 5rem;
-}
+
 
 .pt-24 {
   padding-top: 6rem;
@@ -3755,19 +3753,19 @@ h1, h2, h3, h4, h5, h6 {
 
   .sm\:prose {
     --tw-prose-body: #374151;
-    --tw-prose-headings: #111827;
+    --tw-prose-headings: #75C1C4;
     --tw-prose-lead: #4b5563;
-    --tw-prose-links: #111827;
-    --tw-prose-bold: #111827;
+    --tw-prose-links: #75C1C4;
+    --tw-prose-bold: #75C1C4;
     --tw-prose-counters: #6b7280;
     --tw-prose-bullets: #d1d5db;
     --tw-prose-hr: #e5e7eb;
-    --tw-prose-quotes: #111827;
+    --tw-prose-quotes: #75C1C4;
     --tw-prose-quote-borders: #e5e7eb;
     --tw-prose-captions: #6b7280;
-    --tw-prose-kbd: #111827;
+    --tw-prose-kbd: #75C1C4;
     --tw-prose-kbd-shadows: rgb(17 24 39 / 10%);
-    --tw-prose-code: #111827;
+    --tw-prose-code: #75C1C4;
     --tw-prose-pre-code: #e5e7eb;
     --tw-prose-pre-bg: #1f2937;
     --tw-prose-th-borders: #d1d5db;

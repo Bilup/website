@@ -48,13 +48,13 @@ enableGitInfo = false
   # Footer Configuration
   [params.footer]
     column_1_title = "FEATURES"
-    column_2_title = "ORGANIZATION"
+    column_2_title = "LINKS"
     column_3_title = "LEGAL"
   
   [params.header]
     # Header background and border styles (optional)
-    background = "bg-white/80 backdrop-blur-sm"
-    border = "border-b border-gray-100"
+    background = "bg-dark-800"
+    border = "border-b border-dark-600"
     
     # Logo configuration
     [params.header.logo]
@@ -66,16 +66,16 @@ enableGitInfo = false
       
       # Dropdown menu configuration
       [params.header.menu.dropdown]
-        width = "w-72"
-        container_padding = "py-6"
-        item_padding = "px-8 py-3"
-        background = "bg-white"
-        border = "border border-gray-100"
+        width = "w-40"
+        container_padding = "py-2"
+        item_padding = "px-4 py-2"
+        background = "bg-dark-800"
+        border = "border border-dark-600"
         shadow = "shadow-xl"
-        radius = "rounded-lg"
-        text_color = "text-gray-700"
-        hover_background = "hover:bg-gray-50"
-        text_size = "text-sm"
+        radius = "rounded-[5px]"
+        text_color = "text-dark-200"
+        hover_background = "hover:bg-dark-700"
+        text_size = "text-xs"
     
     # Button configuration
       # Get Started button
@@ -168,7 +168,7 @@ enableGitInfo = false
          url = "https://editor.bilup.org/"
       [languages.zh-cn.params.footer]
         column_1_title = "功能"
-        column_2_title = "组织"
+        column_2_title = "链接"
         column_3_title = "法律条例"
       [languages.zh-cn.menu]
       [languages.zh-cn.params.header.buttons.getStarted]
@@ -180,6 +180,7 @@ enableGitInfo = false
     [languages.zh-cn.menu.main.params]
       has_submenu = true
       submenu = [
+        { name = "Bilup Nova", url = "/features/nova/" },
         { name = "实时协作", url = "/features/live-collab/" },
         { name = "自定义主题", url = "/features/custom-theme/" }
       ]
@@ -193,14 +194,19 @@ enableGitInfo = false
     weight = 3
       # Footer Column 1 Menu
   [[languages.zh-cn.menu.footer_column_1]]
+    name = "Bilup Nova"
+    url = "/features/nova/"
+    weight = 1
+
+  [[languages.zh-cn.menu.footer_column_1]]
     name = "实时协作"
     url = "/features/live-collab/"
-    weight = 1
+    weight = 2
 
   [[languages.zh-cn.menu.footer_column_1]]
     name = "自定义主题"
     url = "/features/custom-theme/"
-    weight = 2
+    weight = 3
 
   # Footer Column 2 Menu
   [[languages.zh-cn.menu.footer_column_2]]
@@ -235,6 +241,7 @@ enableGitInfo = false
     [menu.main.params]
       has_submenu = true
       submenu = [
+        { name = "Bilup Nova", url = "/features/nova/" },
         { name = "Live Collaboration", url = "/features/live-collab/" },
         { name = "Custom Theme", url = "/features/custom-theme/" }
       ]
@@ -249,14 +256,19 @@ enableGitInfo = false
 
   # Footer Column 1 Menu
   [[menu.footer_column_1]]
+    name = "Bilup Nova"
+    url = "/features/nova/"
+    weight = 1
+
+  [[menu.footer_column_1]]
     name = "Live Collaboration"
     url = "/features/live-collab/"
-    weight = 1
+    weight = 2
 
   [[menu.footer_column_1]]
     name = "Custom Theme"
     url = "/features/custom-theme/"
-    weight = 2
+    weight = 3
 
   # Footer Column 2 Menu
   [[menu.footer_column_2]]

@@ -3,7 +3,7 @@ title: "Live Collaboration"
 description: "Collaborate with your team in real-time on Scratch projects. Share your ideas, feedback, and work together to create amazing projects."
 layout: "feature"
 badge: "New"
-badgeColor: "#16a34a"
+badgeColor: "#4ade80"
 features:
   - title: "Real-time Collaboration"
     description: "Collaborate with your team in real-time on Scratch projects. Share your ideas, feedback, and work together to create amazing projects."

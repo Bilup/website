@@ -18,7 +18,7 @@
 
     <!-- Recent Articles -->
     {{ if .Site.Params.blog.sidebar.recent.enable }}
-        <div class="bg-white rounded-lg shadow-md p-6">
+        <div class="bg-dark-800 rounded-lg shadow-md p-6">
             <h3 class="text-lg font-bold mb-4">{{ .Site.Params.blog.sidebar.recent.title | default (i18n "recentArticles" .) }}</h3>
             <div class="space-y-4">
                 {{ $recentCount := .Site.Params.blog.sidebar.recent.count | default 5 }}
@@ -35,10 +35,10 @@
                                     >
                                 </div>
                             {{ end }}
-                            <h4 class="font-medium text-gray-900 group-hover:text-primary-600 transition-colors duration-200 line-clamp-2">
+                            <h4 class="font-medium text-dark-100 group-hover:text-primary-400 transition-colors duration-200 line-clamp-2">
                                 {{ .Title }}
                             </h4>
-                            <div class="flex items-center text-sm text-gray-500 mt-2">
+                            <div class="flex items-center text-sm text-dark-400 mt-2">
                                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                 </svg>
@@ -55,7 +55,7 @@
 
     <!-- Categories -->
     {{ if .Site.Params.blog.sidebar.categories.enable }}
-        <div class="bg-white rounded-lg shadow-md p-6">
+        <div class="bg-dark-800 rounded-lg shadow-md p-6">
             <h3 class="text-lg font-bold mb-4">{{ .Site.Params.blog.sidebar.categories.title | default (i18n "categories" .) }}</h3>
             <div class="flex flex-wrap gap-2">
                 {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
@@ -71,15 +71,15 @@
 
     <!-- Tags Cloud -->
     {{ if .Site.Params.blog.sidebar.tags.enable }}
-        <div class="bg-white rounded-lg shadow-md p-6">
+        <div class="bg-dark-800 rounded-lg shadow-md p-6">
             <h3 class="text-lg font-bold mb-4">{{ .Site.Params.blog.sidebar.tags.title | default (i18n "popularTags" .) }}</h3>
             <div class="flex flex-wrap gap-2">
                 {{ $tagCount := .Site.Params.blog.sidebar.tags.count | default 20 }}
                 {{ range first $tagCount .Site.Taxonomies.tags.ByCount }}
                     <a href="{{ "/tags/" | relLangURL }}{{ .Name | urlize }}"
-                       class="text-sm text-gray-600 hover:text-primary-600">
+                       class="text-sm text-dark-400 hover:text-primary-400">
                         #{{ .Name }}
-                        <span class="text-gray-500">({{ .Count }})</span>
+                        <span class="text-dark-500">({{ .Count }})</span>
                     </a>
                 {{ end }}
             </div>

@@ -6,23 +6,33 @@
 {{ $secondary_button_url := .Get "secondary_button_url" }}
 {{ $hero_image := .Get "hero_image" }}
 {{ $background_image := .Get "background_image" }}
+{{ $background_color := .Get "background_color" | default "bg-dark-700" }}
 {{ $gradient_from := .Get "gradient-from" }}
 {{ $gradient_to := .Get "gradient-to" }}
 {{ $gradient_angle := .Get "gradient-angle" | default "180" }}
 
-<section class="relative overflow-hidden" {{ if $gradient_from }}style="background:linear-gradient({{ $gradient_angle }}deg,{{ $gradient_from }},{{ $gradient_to | default $gradient_from }})"{{ else }}class="bg-gradient-to-b from-gray-50 to-white"{{ end }}>
+{{ $bgStyle := "" }}
+{{ $bgClass := $background_color }}
+{{ if $gradient_from }}
+    {{ $bgStyle = printf "background:linear-gradient(%sdeg,%s,%s)" $gradient_angle $gradient_from ($gradient_to | default $gradient_from) }}
+    {{ $bgClass = "" }}
+{{ end }}
+
+<section class="relative overflow-hidden {{ $bgClass }} -mt-20" style="min-height: 100vh; {{ if $bgStyle }}{{ $bgStyle }}{{ end }}">
     {{ if $background_image }}
-    <div class="absolute inset-0">
-        <img src="{{ $background_image | relURL }}" alt="Background" class="w-full h-full object-cover">
+    <div style="position: absolute; inset: 0; overflow: hidden; min-height: 100vh;">
+        <img src="{{ $background_image | relURL }}" alt="Background" style="width: 100%; height: 100%; object-fit: cover; min-height: 100vh;">
+        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6);"></div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(34, 34, 34,1) 0%, transparent 40%);"></div>
     </div>
     {{ end }}
-    <div class="container pt-16 pb-20 md:pt-24 md:pb-28">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <div class="relative container min-h-screen flex items-center justify-center py-12">
+        <div class="grid lg:grid-cols-3 gap-12 items-center">
             <div class="space-y-8">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                     {{ $headline | safeHTML }}
                 </h1>
-                <p class="text-xl text-gray-600">
+                <p class="text-xl text-dark-300">
                     {{ $sub_headline | safeHTML }}
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
@@ -38,15 +48,12 @@
                     {{ end }}
                 </div>
             </div>
-            <div class="relative">
+            <div class="lg:col-span-2 relative flex justify-center">
                 {{ if $hero_image }}
                 <div class="relative z-10">
-                    <img src="{{ $hero_image | relURL }}" alt="Hero Image" class="rounded-xl shadow-elevation">
+                    <img src="{{ $hero_image | relURL }}" alt="Hero Image" class="rounded-xl shadow-elevation w-full max-w-4xl">
                 </div>
                 {{ end }}
-                <!-- Background decoration -->
-                <div class="absolute -top-20 -right-20 w-64 h-64 bg-primary-100 rounded-full filter blur-3xl opacity-50"></div>
-                <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-secondary-100 rounded-full filter blur-3xl opacity-50"></div>
             </div>
         </div>
     </div>

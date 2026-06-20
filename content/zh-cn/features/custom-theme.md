@@ -2,8 +2,8 @@
 title: "自定义主题"
 description: "使用我们的主题编辑器为您的 Scratch 项目创建自定义主题。自定义项目的外观和感觉，以匹配您的品牌。"
 layout: "feature"
-badge: "自定义"
-badgeColor: "#eb4a25"
+badge: "个性化"
+badgeColor: "#fb923c"
 features:
   - title: "渐变主题"
     description: "设计美观的渐变主题，为您的 Scratch 编辑器带来现代和动态的外观。"

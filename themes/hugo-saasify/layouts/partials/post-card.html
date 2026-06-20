@@ -1,4 +1,4 @@
-<article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+<article class="bg-dark-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
     {{ with .Params.featured_image }}
         <a href="{{ $.RelPermalink }}" class="block aspect-w-16 aspect-h-9 overflow-hidden">
             <img 
@@ -29,7 +29,7 @@
         </h2>
 
         <!-- Description -->
-        <p class="text-gray-600 mb-4 line-clamp-2">
+        <p class="text-dark-300 mb-4 line-clamp-2">
             {{ with .Description }}
                 {{ . }}
             {{ else }}
@@ -38,7 +38,7 @@
         </p>
 
         <!-- Author and Date in a cleaner layout -->
-        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+        <div class="flex items-center justify-between text-sm text-dark-400 mb-4">
             {{ with .Params.author }}
                 <div class="flex items-center">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

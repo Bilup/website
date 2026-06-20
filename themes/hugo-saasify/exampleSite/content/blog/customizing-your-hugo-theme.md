@@ -33,7 +33,7 @@ The easiest way to start customizing your theme is by modifying the CSS:
 
 body {
     font-family: var(--font-family);
-    color: #333;
+    color: #222;
 }
 {{< /code >}}
 
