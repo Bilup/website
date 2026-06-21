@@ -1,47 +1,53 @@
 ---
-title: "Community Suggestion Guidelines"
+title: "Community Suggestion Adoption Guidelines"
 date: 2026-05-02
 author: "Bilup"
-description: "Standards for submitting suggestions and bug reports."
+description: "Standards for submitting suggestions and feedback when contributing to Bilup."
 categories: ["Rules"]
 tags: ["Community"]
 ---
 
-Bilup has recently opened channels for community suggestions and issue reporting.
+Recently, Bilup has opened channels for community suggestions and issue reporting.
 
-To ensure quality and relevance, the Bilup development team has established the following guidelines:
+To ensure the quality and relevance of suggestions and feedback, the Bilup development team has established the following guidelines:
 
 ## 1. Format Requirements
 
-- Bug reports should include **steps to reproduce** and **actual results**
+- Issue reports should include **steps to reproduce** and **actual results**
 
-- Suggestions should be as detailed as possible to help developers understand the request
+- Suggestions should be as detailed as possible to provide sufficient information
 
 ## 2. Submission Methods
 
 ### GitHub Repository
 
 - Must use **Markdown format**
-- Must be written in **English**
 - Submit here:
   https://github.com/orgs/Bilup/discussions/new?category=bug-report-unsure-repo
 
-### QQ
+### Bilup QQ User Group
 
 - You must **@RyaninCn11**
 - Please provide a clear and complete description
 
-## 3. Acceptance Criteria
+### Email
 
-Submissions are evaluated based on current development priorities.
+- Please provide a clear and complete description (attachments may be included)
+- Submit to: support@bilup.org
+- Do **not** submit too **frequently**, otherwise your submission may be rejected
 
-Aligned suggestions/issues may be prioritized.
+## 3. Adoption Criteria
 
-### Current Priorities
+Submissions are evaluated based on current development plans:
 
-1. Translation improvements
-2. Bug fixes
-3. Documentation and tutorials
-4. Extension library expansion
+Aligned suggestions and feedback may be prioritized for adoption:
 
-Submissions that do not align may be rejected or deferred.
+### Current Development Priorities
+
+1. Fix known issues
+2. Expand extension library
+3. Performance optimization (desktop)
+4. Write tutorials (or documentation)
+5. Supplement translations
+
+Submissions that do not align with current plans may be rejected or deferred.
