@@ -68,5 +68,3 @@ title: Home
 >}}
 
 {{< /features-section >}}
-
-{{< cta >}}

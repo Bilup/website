@@ -68,5 +68,3 @@ title: 首页
 >}}
 
 {{< /features-section >}}
-
-{{< cta >}}
