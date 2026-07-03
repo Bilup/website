@@ -7,17 +7,18 @@
 {{ $buttonText := .Get "buttonText" | default "Learn More" }}
 {{ $buttonLink := .Get "buttonLink" | default "#" }}
 {{ $imagePosition := .Get "imagePosition" | default "right" }}
+{{ $uniqueId := md5 $title }}
 
 {{ $features := split (.Get "features") "," }}
 
-<div class="grid lg:grid-cols-2 gap-12 items-center" style="--badge-color: {{ $badgeColor }}">
+<div class="feature-card grid lg:grid-cols-2 gap-12 items-center opacity-0" style="--badge-color: {{ $badgeColor }}" id="feature-{{ $uniqueId }}">
     {{ if eq $imagePosition "left" }}
-    <div class="order-2 lg:order-1">
+    <div class="order-2 lg:order-1 feature-image">
         <img src="{{ $image | relURL }}" alt="{{ $title }}" class="rounded-xl shadow-elevation">
     </div>
     {{ end }}
 
-    <div class="space-y-6 {{ if eq $imagePosition "left" }}order-1 lg:order-2{{ end }}">
+    <div class="space-y-6 {{ if eq $imagePosition "left" }}order-1 lg:order-2{{ end }} feature-content">
         <style>
             .badge {
                 background-color: color-mix(in srgb, var(--badge-color) 10%, transparent);
@@ -27,12 +28,12 @@
                 color: var(--badge-color);
             }
         </style>
-        <div class="badge inline-block px-4 py-2 rounded-full font-medium">{{ $badge }}</div>
-        <h3 class="text-2xl md:text-3xl font-bold">{{ $title }}</h3>
-        <p class="text-lg text-dark-300">{{ $description }}</p>
-        <ul class="space-y-4">
+        <div class="badge inline-block px-4 py-2 rounded-full font-medium feature-badge">{{ $badge }}</div>
+        <h3 class="text-2xl md:text-3xl font-bold feature-title">{{ $title }}</h3>
+        <p class="text-lg text-dark-300 feature-description">{{ $description }}</p>
+        <ul class="space-y-4 feature-list">
             {{ range $features }}
-            <li class="flex items-center space-x-3">
+            <li class="flex items-center space-x-3 feature-list-item">
                 <svg class="badge-icon w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                 </svg>
@@ -40,11 +41,11 @@
             </li>
             {{ end }}
         </ul>
-        <a href="{{ $buttonLink }}" class="btn-primary inline-block">{{ $buttonText }}</a>
+        <a href="{{ $buttonLink }}" class="btn-primary inline-block feature-button">{{ $buttonText }}</a>
     </div>
 
     {{ if ne $imagePosition "left" }}
-    <div>
+    <div class="feature-image">
         <img src="{{ $image | relURL }}" alt="{{ $title }}" class="rounded-xl shadow-elevation">
     </div>
     {{ end }}

@@ -2,11 +2,11 @@
 {{ $title := .Get "title" | default "Powerful Features for Modern Teams" }}
 {{ $description := .Get "description" | default "Discover how our platform helps you understand and optimize every aspect of your user experience." }}
 
-<section class="section">
+<section class="section features-section">
     <div class="container">
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">{{ $title }}</h2>
-            <p class="text-xl text-dark-300">{{ $description }}</p>
+            <h2 class="section-title text-3xl md:text-4xl font-bold mb-6 opacity-0">{{ $title }}</h2>
+            <p class="section-description text-xl text-dark-300 opacity-0">{{ $description }}</p>
         </div>
 
         <!-- Feature Grid -->

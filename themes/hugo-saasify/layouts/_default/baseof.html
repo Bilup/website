@@ -119,5 +119,304 @@
             });
         }
     </script>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -10% 0px',
+                threshold: 0.1
+            };
+
+            const featureTimers = new WeakMap();
+
+            function clearFeatureTimers(card) {
+                const timers = featureTimers.get(card);
+                if (timers) {
+                    timers.forEach(function(timer) {
+                        clearTimeout(timer);
+                    });
+                    featureTimers.delete(card);
+                }
+            }
+
+            function enterFeatureCard(card) {
+                clearFeatureTimers(card);
+                
+                card.style.opacity = '1';
+                
+                const imagePosition = card.querySelector('.feature-image');
+                const content = card.querySelector('.feature-content');
+                const badge = card.querySelector('.feature-badge');
+                const title = card.querySelector('.feature-title');
+                const description = card.querySelector('.feature-description');
+                const listItems = card.querySelectorAll('.feature-list-item');
+                const button = card.querySelector('.feature-button');
+                
+                const isLeft = imagePosition && imagePosition.classList.contains('lg:order-1');
+                
+                const timers = [];
+                
+                if (imagePosition) {
+                    imagePosition.style.opacity = '0';
+                    imagePosition.style.animation = 'none';
+                }
+                if (content) {
+                    content.style.opacity = '0';
+                    content.style.animation = 'none';
+                }
+                if (badge) { badge.style.opacity = '0'; badge.style.animation = 'none'; }
+                if (title) { title.style.opacity = '0'; title.style.animation = 'none'; }
+                if (description) { description.style.opacity = '0'; description.style.animation = 'none'; }
+                if (listItems) {
+                    listItems.forEach(function(item) {
+                        item.style.opacity = '0';
+                        item.style.animation = 'none';
+                    });
+                }
+                if (button) { button.style.opacity = '0'; button.style.animation = 'none'; }
+                
+                requestAnimationFrame(function() {
+                    if (imagePosition && content) {
+                        if (isLeft) {
+                            imagePosition.style.animation = 'slideLeft 0.6s ease-out forwards';
+                            content.style.animation = 'slideRight 0.6s ease-out forwards';
+                        } else {
+                            content.style.animation = 'slideLeft 0.6s ease-out forwards';
+                            imagePosition.style.animation = 'slideRight 0.6s ease-out forwards';
+                        }
+                    }
+                });
+                
+                let delay = 150;
+                if (badge) {
+                    timers.push(setTimeout(function() {
+                        badge.style.animation = 'fadeIn 0.4s ease-out forwards';
+                    }, delay));
+                    delay += 100;
+                }
+                if (title) {
+                    timers.push(setTimeout(function() {
+                        title.style.animation = 'fadeIn 0.4s ease-out forwards';
+                    }, delay));
+                    delay += 100;
+                }
+                if (description) {
+                    timers.push(setTimeout(function() {
+                        description.style.animation = 'fadeIn 0.4s ease-out forwards';
+                    }, delay));
+                    delay += 100;
+                }
+                if (listItems) {
+                    listItems.forEach(function(item, index) {
+                        timers.push(setTimeout(function() {
+                            item.style.animation = 'fadeIn 0.3s ease-out forwards';
+                        }, delay + index * 80));
+                    });
+                    delay += listItems.length * 80;
+                }
+                if (button) {
+                    timers.push(setTimeout(function() {
+                        button.style.animation = 'fadeIn 0.4s ease-out forwards';
+                    }, delay));
+                }
+                
+                featureTimers.set(card, timers);
+            }
+
+            function exitFeatureCard(card) {
+                clearFeatureTimers(card);
+                
+                const imagePosition = card.querySelector('.feature-image');
+                const content = card.querySelector('.feature-content');
+                const badge = card.querySelector('.feature-badge');
+                const title = card.querySelector('.feature-title');
+                const description = card.querySelector('.feature-description');
+                const listItems = card.querySelectorAll('.feature-list-item');
+                const button = card.querySelector('.feature-button');
+                
+                const isLeft = imagePosition && imagePosition.classList.contains('lg:order-1');
+                const timers = [];
+                
+                if (imagePosition) {
+                    imagePosition.style.animation = (isLeft ? 'slideLeftOut' : 'slideRightOut') + ' 0.4s ease-in forwards';
+                }
+                if (content) {
+                    content.style.animation = (isLeft ? 'slideRightOut' : 'slideLeftOut') + ' 0.4s ease-in forwards';
+                }
+                
+                let delay = 50;
+                if (badge) {
+                    timers.push(setTimeout(function() { badge.style.animation = 'fadeOut 0.3s ease-in forwards'; }, delay));
+                    delay += 50;
+                }
+                if (title) {
+                    timers.push(setTimeout(function() { title.style.animation = 'fadeOut 0.3s ease-in forwards'; }, delay));
+                    delay += 50;
+                }
+                if (description) {
+                    timers.push(setTimeout(function() { description.style.animation = 'fadeOut 0.3s ease-in forwards'; }, delay));
+                    delay += 50;
+                }
+                if (listItems) {
+                    listItems.forEach(function(item, index) {
+                        timers.push(setTimeout(function() { item.style.animation = 'fadeOut 0.2s ease-in forwards'; }, delay + index * 40));
+                    });
+                    delay += listItems.length * 40;
+                }
+                if (button) {
+                    timers.push(setTimeout(function() { button.style.animation = 'fadeOut 0.3s ease-in forwards'; }, delay));
+                }
+                
+                timers.push(setTimeout(function() {
+                    card.style.opacity = '0';
+                    if (imagePosition) { imagePosition.style.opacity = '0'; imagePosition.style.animation = 'none'; }
+                    if (content) { content.style.opacity = '0'; content.style.animation = 'none'; }
+                    if (badge) { badge.style.opacity = '0'; badge.style.animation = 'none'; }
+                    if (title) { title.style.opacity = '0'; title.style.animation = 'none'; }
+                    if (description) { description.style.opacity = '0'; description.style.animation = 'none'; }
+                    if (listItems) {
+                        listItems.forEach(function(item) {
+                            item.style.opacity = '0';
+                            item.style.animation = 'none';
+                        });
+                    }
+                    if (button) { button.style.opacity = '0'; button.style.animation = 'none'; }
+                    clearFeatureTimers(card);
+                }, 600));
+                
+                featureTimers.set(card, timers);
+            }
+
+            const featureObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        enterFeatureCard(entry.target);
+                    } else {
+                        exitFeatureCard(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.feature-card').forEach(function(card) {
+                card.style.opacity = '0';
+                const imagePosition = card.querySelector('.feature-image');
+                const content = card.querySelector('.feature-content');
+                const badge = card.querySelector('.feature-badge');
+                const title = card.querySelector('.feature-title');
+                const description = card.querySelector('.feature-description');
+                const listItems = card.querySelectorAll('.feature-list-item');
+                const button = card.querySelector('.feature-button');
+                
+                if (imagePosition) { imagePosition.style.opacity = '0'; imagePosition.style.animation = 'none'; }
+                if (content) { content.style.opacity = '0'; content.style.animation = 'none'; }
+                if (badge) { badge.style.opacity = '0'; badge.style.animation = 'none'; }
+                if (title) { title.style.opacity = '0'; title.style.animation = 'none'; }
+                if (description) { description.style.opacity = '0'; description.style.animation = 'none'; }
+                if (listItems) {
+                    listItems.forEach(function(item) {
+                        item.style.opacity = '0';
+                        item.style.animation = 'none';
+                    });
+                }
+                if (button) { button.style.opacity = '0'; button.style.animation = 'none'; }
+                
+                featureObserver.observe(card);
+            });
+
+            const sectionTimers = new WeakMap();
+
+            function clearSectionTimers(section) {
+                const timers = sectionTimers.get(section);
+                if (timers) {
+                    timers.forEach(function(timer) {
+                        clearTimeout(timer);
+                    });
+                    sectionTimers.delete(section);
+                }
+            }
+
+            function enterSectionTitle(section) {
+                clearSectionTimers(section);
+                
+                const title = section.querySelector('.section-title');
+                const description = section.querySelector('.section-description');
+                
+                if (title) {
+                    title.style.opacity = '0';
+                    title.style.animation = 'none';
+                    requestAnimationFrame(function() {
+                        title.style.animation = 'fadeIn 0.6s ease-out forwards';
+                    });
+                }
+                if (description) {
+                    description.style.opacity = '0';
+                    description.style.animation = 'none';
+                    requestAnimationFrame(function() {
+                        description.style.animation = 'fadeIn 0.6s ease-out forwards';
+                        description.style.animationDelay = '200ms';
+                    });
+                }
+            }
+
+            function exitSectionTitle(section) {
+                clearSectionTimers(section);
+                
+                const title = section.querySelector('.section-title');
+                const description = section.querySelector('.section-description');
+                const timers = [];
+                
+                if (title) {
+                    title.style.animation = 'fadeOut 0.4s ease-in forwards';
+                }
+                if (description) {
+                    timers.push(setTimeout(function() {
+                        description.style.animation = 'fadeOut 0.4s ease-in forwards';
+                    }, 100));
+                }
+                
+                timers.push(setTimeout(function() {
+                    if (title) {
+                        title.style.opacity = '0';
+                        title.style.animation = 'none';
+                    }
+                    if (description) {
+                        description.style.opacity = '0';
+                        description.style.animation = 'none';
+                    }
+                    clearSectionTimers(section);
+                }, 500));
+                
+                sectionTimers.set(section, timers);
+            }
+
+            const sectionObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        enterSectionTitle(entry.target);
+                    } else {
+                        exitSectionTitle(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.features-section').forEach(function(section) {
+                const title = section.querySelector('.section-title');
+                const description = section.querySelector('.section-description');
+                
+                if (title) {
+                    title.style.opacity = '0';
+                    title.style.animation = 'none';
+                }
+                if (description) {
+                    description.style.opacity = '0';
+                    description.style.animation = 'none';
+                }
+                
+                sectionObserver.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
