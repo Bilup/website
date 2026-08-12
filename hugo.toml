@@ -38,7 +38,7 @@ enableGitInfo = false
     gradient_angle = 30
     [params.cta.primary_button]
       text = "Get Started"
-      url = "https://editor.bilup.org/"
+      url = "https://com.bilup.org/"
   
   # Social Media Links
   [params.social]
@@ -81,7 +81,7 @@ enableGitInfo = false
       # Get Started button
       [params.header.buttons.getStarted]
         text = "Get Started"
-        url = "https://editor.bilup.org/"
+        url = "https://com.bilup.org/"
 
   # Blog configuration
   [params.blog]
@@ -165,7 +165,7 @@ enableGitInfo = false
        gradient_angle = 30
        [languages.zh-cn.params.cta.primary_button]
          text = "开始使用"
-         url = "https://editor.bilup.org/"
+         url = "https://com.bilup.org/"
       [languages.zh-cn.params.footer]
         column_1_title = "功能"
         column_2_title = "链接"
@@ -173,7 +173,7 @@ enableGitInfo = false
       [languages.zh-cn.menu]
       [languages.zh-cn.params.header.buttons.getStarted]
         text = "开始使用"
-        url = "https://editor.bilup.org/"
+        url = "https://com.bilup.org/"
   [[languages.zh-cn.menu.main]]
     name = "功能"
     weight = 1
@@ -226,7 +226,7 @@ enableGitInfo = false
     weight = 1
   [[languages.zh-cn.menu.footer_column_3]]
     name = "隐私政策"
-    url = "https://editor.bilup.org/privacy"
+    url = "https://com.bilup.org/privacy"
     weight = 2
   [languages.zh-cn.params.blog]
     enable = true
@@ -288,5 +288,5 @@ enableGitInfo = false
     weight = 1
   [[menu.footer_column_3]]
     name = "Privacy Policy"
-    url = "https://editor.bilup.org/privacy"
+    url = "https://com.bilup.org/privacy"
     weight = 2

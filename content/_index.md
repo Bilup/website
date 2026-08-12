@@ -6,7 +6,7 @@ title: Home
     headline="Refactoring Freedom"
     sub_headline="Create Scratch projects with useful features and fantastic experience."
     primary_button_text="Get Started"
-    primary_button_url="https://editor.bilup.org/"
+    primary_button_url="https://com.bilup.org/"
     secondary_button_text="Documents"
     secondary_button_url="https://docs.bilup.org/"
     hero_image="/images/editor-en.png"
@@ -38,7 +38,7 @@ title: Home
     badgeColor="#a78bfa"
     image="/images/find-bar-en.png"
     buttonText="Try now"
-    buttonLink="https://editor.bilup.org/editor.html"
+    buttonLink="https://com.bilup.org/editor.html"
     features="More blocks to find,Block shadows' contents to find,Upper/lower case filter,Regular expression filter"
     imagePosition="left"
 >}}
