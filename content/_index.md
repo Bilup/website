@@ -3,7 +3,7 @@ title: Home
 ---
 
 {{< hero 
-    headline="Refactoring Freedom"
+    headline="Elevate your creation"
     sub_headline="Create Scratch projects with useful features and fantastic experience."
     primary_button_text="Get Started"
     primary_button_url="https://com.bilup.org/"
