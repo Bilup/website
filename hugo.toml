@@ -190,7 +190,7 @@ enableGitInfo = false
     weight = 2
   [[languages.zh-cn.menu.main]]
     name = "桌面端"
-    url = "https://desktop.bilup.org/"
+    url = "https://download.bilup.org/"
     weight = 3
       # Footer Column 1 Menu
   [[languages.zh-cn.menu.footer_column_1]]
@@ -216,7 +216,7 @@ enableGitInfo = false
 
   [[languages.zh-cn.menu.footer_column_2]]
     name = "桌面端"
-    url = "https://desktop.bilup.org/"
+    url = "https://download.bilup.org/"
     weight = 2
 
   # Footer Column 3 Menu
@@ -251,7 +251,7 @@ enableGitInfo = false
     weight = 2
   [[menu.main]]
     name = "Desktop"
-    url = "https://desktop.bilup.org/"
+    url = "https://download.bilup.org/"
     weight = 3
 
   # Footer Column 1 Menu
@@ -278,7 +278,7 @@ enableGitInfo = false
 
   [[menu.footer_column_2]]
     name = "Desktop"
-    url = "https://desktop.bilup.org/"
+    url = "https://download.bilup.org/"
     weight = 2
 
   # Footer Column 3 Menu
