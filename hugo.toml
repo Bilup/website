@@ -27,7 +27,10 @@ enableGitInfo = false
   logo = "/images/logo.svg"
   # Google Analytics ID (e.g., "G-XXXXXXXXXX")
   # googleAnalytics = "G-XXXXXXXXXX"
-  
+
+  # Customer Service Email (Global)
+  customerServiceEmail = "maxkore@vapora.dpdns.org"
+
   # Global CTA Configurations
   [params.cta]
     enable = true
@@ -39,31 +42,31 @@ enableGitInfo = false
     [params.cta.primary_button]
       text = "Get Started"
       url = "https://com.bilup.org/"
-  
+
   # Social Media Links
   [params.social]
     github = "https://github.com/Bilup"
     qq = "https://qm.qq.com/q/RwVZVMkr0c"
-  
+
   # Footer Configuration
   [params.footer]
     column_1_title = "FEATURES"
     column_2_title = "LINKS"
     column_3_title = "LEGAL"
-  
+
   [params.header]
     # Header background and border styles (optional)
     background = "bg-dark-800"
     border = "border-b border-dark-600"
-    
+
     # Logo configuration
     [params.header.logo]
       src = "/images/logo.svg"
-    
+
     # Menu configuration
     [params.header.menu]
       spacing = "space-x-8"
-      
+
       # Dropdown menu configuration
       [params.header.menu.dropdown]
         width = "w-40"
@@ -76,7 +79,7 @@ enableGitInfo = false
         text_color = "text-dark-200"
         hover_background = "hover:bg-dark-700"
         text_size = "text-xs"
-    
+
     # Button configuration
       # Get Started button
       [params.header.buttons.getStarted]
@@ -88,11 +91,11 @@ enableGitInfo = false
     enable = true
     title = "Latest Articles"
     subtitle = "Learn more about our progress and new updates."
-    
+
     # Blog CTA configuration
     [params.blog.cta]
       enable = true  # Enable/disable CTA in blog posts
-    
+
     # Sidebar configuration
     [params.blog.sidebar]
       # Recent articles section
@@ -100,12 +103,12 @@ enableGitInfo = false
         enable = true
         title = "Recent Articles"
         count = 5
-      
+
       # Categories section
       [params.blog.sidebar.categories]
         enable = true
         title = "Categories"
-      
+
       # Tags section
       [params.blog.sidebar.tags]
         enable = true
