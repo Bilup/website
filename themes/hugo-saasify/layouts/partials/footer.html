@@ -96,6 +96,19 @@
                         <img src="/images/social/behance.svg" alt="Behance" class="h-5 w-5">
                     </a>
                     {{ end }}
+
+                    {{ with site.Params.customerServiceEmail }}
+                    <button type="button"
+                            class="footer-email-btn text-dark-400 hover:text-dark-200 focus:outline-none"
+                            data-email="{{ . }}"
+                            aria-label="{{ if eq site.Language.Lang "zh-cn" }}复制客服邮箱{{ else }}Copy support email{{ end }}">
+                        <span class="sr-only">Email</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            <path d="M22 6 12 13 2 6"></path>
+                        </svg>
+                    </button>
+                    {{ end }}
                 </div>
             </div>
 
@@ -133,15 +146,9 @@
         <!-- Bottom -->
         <div class="mt-12 pt-8 border-t border-dark-600">
             <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                <div class="text-dark-300 text-sm">
-                    <p>© {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.</p>
-                    {{ with site.Params.customerServiceEmail }}
-                    <p class="mt-2">
-                        {{ if eq site.Language.Lang "zh-cn" }}客服邮箱：{{ else }}Support: {{ end }}
-                        <a href="mailto:{{ . }}" class="text-dark-300 hover:text-primary-400">{{ . }}</a>
-                    </p>
-                    {{ end }}
-                </div>
+                <p class="text-dark-300 text-sm">
+                    © {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.
+                </p>
                 <a href="https://themes.gohugo.io/themes/hugo-saasify/" class="text-sm text-dark-300 hover:text-primary-400" target="_blank" rel="noopener noreferrer">
                     Using Theme Hugo SaaSify
                 </a>
@@ -149,3 +156,70 @@
         </div>
     </div>
 </footer>
+
+<!-- Copy Toast Container -->
+<div id="footer-copy-toast"
+     class="fixed top-4 right-4 z-50 hidden items-center gap-2 rounded-lg bg-dark-700 border border-dark-600 px-4 py-3 text-sm text-dark-100 shadow-xl transition-opacity duration-300 opacity-0"
+     role="status" aria-live="polite">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20 6 9 17l-5-5"></path>
+    </svg>
+    <span id="footer-copy-toast-text">{{ if eq site.Language.Lang "zh-cn" }}客服邮箱已复制到剪贴板{{ else }}Support email copied to clipboard{{ end }}</span>
+</div>
+
+<script>
+(function () {
+    var toast = document.getElementById('footer-copy-toast');
+    var toastText = document.getElementById('footer-copy-toast-text');
+    var toastTimer = null;
+
+    function showToast(message) {
+        if (!toast) return;
+        if (message) toastText.textContent = message;
+        toast.classList.remove('hidden');
+        // force reflow to restart transition
+        void toast.offsetWidth;
+        toast.classList.remove('opacity-0');
+        toast.classList.add('opacity-100');
+        if (toastTimer) clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+            toast.classList.remove('opacity-100');
+            toast.classList.add('opacity-0');
+            setTimeout(function () { toast.classList.add('hidden'); }, 300);
+        }, 2000);
+    }
+
+    function fallbackCopy(text) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'absolute';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+    }
+
+    function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(text).catch(function () {
+                fallbackCopy(text);
+            });
+        }
+        fallbackCopy(text);
+        return Promise.resolve();
+    }
+
+    document.querySelectorAll('.footer-email-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var email = btn.getAttribute('data-email') || '';
+            if (!email) return;
+            copyText(email).then(function () {
+                var zh = document.documentElement.lang && document.documentElement.lang.toLowerCase().indexOf('zh') === 0;
+                showToast(zh ? '客服邮箱已复制到剪贴板' : 'Support email copied to clipboard');
+            });
+        });
+    });
+})();
+</script>
