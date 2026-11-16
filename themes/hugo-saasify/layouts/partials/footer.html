@@ -96,6 +96,12 @@
                         <img src="/images/social/behance.svg" alt="Behance" class="h-5 w-5">
                     </a>
                     {{ end }}
+                    {{ with site.Params.customerServiceEmail }}
+                    <a href="mailto:{{ . }}" class="text-dark-400 hover:text-dark-200" rel="noopener noreferrer">
+                        <span class="sr-only">Email</span>
+                        <img src="/images/social/email.svg" alt="Email" class="h-5 w-5">
+                    </a>
+                    {{ end }}
                 </div>
             </div>
 
